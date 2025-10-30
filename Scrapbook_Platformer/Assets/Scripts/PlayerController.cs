@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb;
-    private float speed = 10f;
+    private float speed;
 
     public Camera cam;
     
@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = 3 * Time.deltaTime;
     }
 
     // Update is called once per frame
@@ -33,12 +33,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             Debug.Log("hey");
-            velocity.x -= speed * Time.deltaTime;
+            velocity.x -= speed;
         }
         else if (Input.GetKey(KeyCode.D))
         {
             Debug.Log("yo");
-            velocity.x += speed * Time.deltaTime;
+            velocity.x += speed;
         }
         else
         {
